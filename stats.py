@@ -18,6 +18,7 @@ def average(ls):
   total=0
   count=0
   for num in ls:
+      num=float(num)
       total+=num
       count+=1
   return total/count
