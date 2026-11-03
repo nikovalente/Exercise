@@ -24,3 +24,14 @@ def average(ls):
             count+=1
     return total/count
 print('The average is:',average(ls_hrsex))
+
+def prop_above(ls):
+    x=average(ls)
+    tot_students=len(ls)
+    n_students=0
+    for student in ls:
+        if student!='':
+            if float(student)>x:
+                n_students+=1
+    return n_students/tot_students
+print('The proportion of the students above the average is:',prop_above(ls_hrsex))
