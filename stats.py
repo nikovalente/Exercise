@@ -15,11 +15,12 @@ plt.xticks([0,2,4,6,8,10,12,14,18,20,22,24])
 plt.show()
 
 def average(ls):
-  total=0
-  count=0
-  for num in ls:
-      num=float(num)
-      total+=num
-      count+=1
-  return total/count
+    total=0
+    count=0
+    for num in ls:
+        if num!='':
+            num=float(num)
+            total+=num
+            count+=1
+    return total/count
 print('The average is:',average(ls_hrsex))
