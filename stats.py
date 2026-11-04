@@ -23,7 +23,8 @@ def average(ls):
             total+=num
             count+=1
     return total/count
-print('The average is:',average(ls_hrsex))
+x=average(ls_hrsex)
+print("avg is {:.2f}".format(x))
 
 def prop_above(ls):
     x=average(ls)
@@ -34,7 +35,8 @@ def prop_above(ls):
             if float(student)>x:
                 n_students+=1
     return n_students/tot_students
-print('The proportion of the students above the average is:',prop_above(ls_hrsex))
+y=prop_above(ls_hrsex)
+print("percent above avg is {0:.0%}".format(y))
 
 def median(ls):
     ls.sort()
