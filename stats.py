@@ -35,3 +35,12 @@ def prop_above(ls):
                 n_students+=1
     return n_students/tot_students
 print('The proportion of the students above the average is:',prop_above(ls_hrsex))
+
+def median(ls):
+    ls.sort()
+    n=len(ls)
+    if n%2==0:
+        return (float(ls[n//2-1])+float(ls[n//2]))/2
+    else:
+        return float(ls[n//2])
+print('The median of the data is:',median(ls_hrsex))
