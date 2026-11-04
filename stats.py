@@ -8,10 +8,16 @@ ls_hrsex.sort()
 print(ls_hrsex)
 
 import matplotlib.pyplot as plt
-plt.hist(ls_hrsex,bins=7)
+ls_new=list()
+for num in ls_hrsex:
+    if num!='':
+      num=float(num)
+      ls_new.append(num)
+ls_new.sort()
+plt.hist(ls_new,bins=7)
 plt.ylabel('Currency of hours')
 plt.title('Number of hours of exercise')
-plt.xticks([0,2,4,6,8,10,12,14,18,20,22,24])
+#plt.xticks([0,2,4,6,8,10,12,14,18,20,22,24])
 plt.show()
 
 def average(ls):
@@ -23,7 +29,7 @@ def average(ls):
             total+=num
             count+=1
     return total/count
-x=average(ls_hrsex)
+x=average(ls_new)
 print("avg is {:.2f}".format(x))
 
 def prop_above(ls):
@@ -35,7 +41,7 @@ def prop_above(ls):
             if float(student)>x:
                 n_students+=1
     return n_students/tot_students
-y=prop_above(ls_hrsex)
+y=prop_above(ls_new)
 print("percent above avg is {0:.0%}".format(y))
 
 def median(ls):
@@ -45,4 +51,4 @@ def median(ls):
         return (float(ls[n//2-1])+float(ls[n//2]))/2
     else:
         return float(ls[n//2])
-print('The median of the data is:',median(ls_hrsex))
+print('The median of the data is:',median(ls_new))
